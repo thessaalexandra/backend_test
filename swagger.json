@@ -1,0 +1,85 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "version": "1.0.0"
+    },
+    "paths": {
+        "/members": {
+        "get": {
+            "summary": "Semua Anggota",
+            "responses": {
+            "200": {
+                "description": "List buku",
+                "content": {
+                "application/json": {
+                    "schema": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/components/schemas/Member"
+                    }
+                    }
+                }
+                }
+            }
+            }
+        }
+        },
+        "/books": {
+        "get": {
+            "summary": "Semua Buku",
+            "responses": {
+            "200": {
+                "description": "List buku",
+                "content": {
+                "application/json": {
+                    "schema": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/components/schemas/Book"
+                    }
+                    }
+                }
+                }
+            }
+            }
+        }
+        }
+    },
+    "components": {
+        "schemas": {
+        "Member": {
+            "type": "object",
+            "properties": {
+            "code": {
+                "type": "string"
+            },
+            "name": {
+                "type": "string"
+            },
+            "penaltyUntil": {
+                "type": "string",
+                "format": "date-time"
+            }
+            }
+        },
+        "Book": {
+            "type": "object",
+            "properties": {
+            "code": {
+                "type": "string"
+            },
+            "title": {
+                "type": "string"
+            },
+            "author": {
+                "type": "string"
+            },
+            "stock": {
+                "type": "integer"
+            }
+            }
+        }
+        }
+    }
+}
+    
